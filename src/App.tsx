@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Button from './components/Button';
 import Navbar from './components/Navbar';
 import Body from './components/Body'
 
