@@ -26,9 +26,9 @@ export default function Body(){
             const pokemonResponse = await fetch(item.url);
             const pokemon = await pokemonResponse.json();
             return {
-            id: pokemon.id,
-            name: pokemon.name,
-            image: pokemon.sprites.front_default 
+                id: pokemon.id,
+                name: pokemon.name,
+                image: pokemon.sprites.front_default 
             };
         }));
         setPokemons(pokemonDetails);
