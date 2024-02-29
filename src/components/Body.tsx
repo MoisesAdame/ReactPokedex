@@ -1,4 +1,5 @@
 import './body.css';
+import Button from './Button';
 import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
 import InputPokemon from './InputPokemon';
 
@@ -13,6 +14,10 @@ interface Pokemon {
     id: number;
     name: string;
     image: string;
+}
+
+function verInfo(){
+    console.log("hello");
 }
 
 export default function Body() {
@@ -63,14 +68,24 @@ export default function Body() {
     return (
         <div className='main-body p-4'>
             <InputPokemon />
-            <h1 className="text-3xl font-bold text-center mb-8">Pokemons</h1>
-            <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h1 className="text-3xl font-bold text-center mb-8 mt-10">Pokémons</h1>
+
+            <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
+
                 {pokemons.map(pokemon => (
-                    <div key={pokemon.id} className="pokemon bg-white rounded-lg overflow-hidden shadow-lg p-4">
-                        <p className="text-sm font-semibold">ID: {pokemon.id}</p>
-                        <h2 className="text-xl font-bold">{pokemon.name}</h2>
-                        <img src={pokemon.image} alt={pokemon.name} className="mx-auto"/>
+                    <div className="card__centered__box">
+                        <div className="card__circle">
+                            <img className="card__img" src={pokemon.image} alt="Card"/>
+                        </div>
+                        <div key = {pokemon.id} className='card__box'>
+                            <div className="card__frame">
+                                <div className="card__txt">{pokemon.id}</div>
+                                <div className="card__name">{pokemon.name}</div>
+                                <Button onClick={verInfo} label="Ver Información" color='red'></Button>
+                            </div>
+                        </div>
                     </div>
+
                 ))}
                 {/* Elemento para la observación del Intersection Observer */}
                 <div ref={loadMoreRef} className="h-20"></div>

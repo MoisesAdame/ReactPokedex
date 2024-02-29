@@ -5,11 +5,15 @@
     @apply bg-blue-700;
 }
 .red{
-    @apply bg-red-500 text-white;
+    @apply bg-red-200 text-gray-500;
 }
-.red:hover{
-    @apply bg-red-700 
 
+.red__small__btn{
+    @apply bg-red-500 text-gray-500;
+}
+
+.red:hover{
+    @apply bg-red-400 
 }
 .green{
     @apply bg-green-500 text-white;
@@ -24,5 +28,5 @@
     @apply bg-yellow-700;
 }
 .btn {
-    @apply font-bold py-2 px-4 rounded mx-5;
+    @apply font-bold py-2 px-4 rounded-2xl mx-5 shadow-lg;
 }

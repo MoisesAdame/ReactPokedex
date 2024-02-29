@@ -1,4 +1,4 @@
-import logo from '../images/International_Pokémon_logo.svg.png';
+import logo from '../images/International_Pokémon_logo.svg.png';
 import './navbar.css';
 
 interface NavbarProps{

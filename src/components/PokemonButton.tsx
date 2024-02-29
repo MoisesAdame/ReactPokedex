@@ -8,7 +8,7 @@ interface PokemonButtonProps{
 export default function PokemonButton(props: PokemonButtonProps){
     return (
         <button
-            className={`pokemon-button ${props.color==='red'?'red':''} ${props.color==='blue'?'blue':''}`}
+            className={`pokemon-button ${props.color==='red'?'red':''} ${props.color==='red2'?'red__small__btn':''}`}
             >
             <img src={pokeball} alt="pokeball" />
         </button>
