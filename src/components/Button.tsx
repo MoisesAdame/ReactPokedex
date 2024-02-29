@@ -12,6 +12,8 @@ export default function Button(props:ButtonProps){
             className={`btn ${props.color==='red'?'red':''} ${props.color==='green'?'green':''} ${props.color==='yellow'?'yellow':''} ${props.color==='blue'?'blue':''}` }
             >
             {props.label}
+
+            <img src="" alt="" />
         </button>
     )
 }

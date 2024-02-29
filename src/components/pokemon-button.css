@@ -1,0 +1,29 @@
+.pokemon-button {
+    height: 100px;
+    aspect-ratio: 1;
+    @apply rounded-full;
+}
+
+.pokemon-button .red{
+    @apply rounded-full bg-red-600;
+}
+
+.pokemon-button .blue{
+    @apply rounded-full bg-blue-600;
+}
+
+.pokemon-button .red:hover {
+    @apply bg-red-500;
+}
+
+.pokemon-button .blue:hover {
+    @apply bg-blue-500;
+}
+
+.pokemon-button .red:active {
+    @apply bg-green-500;
+}
+
+.pokemon-button .blue:active {
+    @apply bg-yellow-500;
+}
