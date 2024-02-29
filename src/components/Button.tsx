@@ -9,11 +9,9 @@ interface ButtonProps{
 export default function Button(props:ButtonProps){
     return (
         <button onClick={props.onClick}
-            className={`btn ${props.color==='red'?'red':''} ${props.color==='green'?'green':''} ${props.color==='yellow'?'yellow':''} ${props.color==='blue'?'blue':''}` }
+            className={`btn ${props.color==='redness'?'light__red':''} ${props.color==='green'?'green':''} ${props.color==='yellow'?'yellow':''} ${props.color==='blue'?'blue':''}` }
             >
             {props.label}
-
-            <img src="" alt="" />
         </button>
     )
 }

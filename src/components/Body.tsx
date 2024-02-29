@@ -16,6 +16,8 @@ interface Pokemon {
     image: string;
 }
 
+// TODO: Desarrollar función para desplegar info. de un 
+// solo pokemon.
 function verInfo(){
     console.log("hello");
 }
@@ -67,7 +69,7 @@ export default function Body() {
 
     return (
         <div className='main-body p-4'>
-            <InputPokemon />
+            <InputPokemon/>;
             <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
 
                 {pokemons.map(pokemon => (
@@ -79,7 +81,7 @@ export default function Body() {
                             <div className="card__frame">
                                 <div className="card__txt">{pokemon.id}</div>
                                 <div className="card__name">{pokemon.name}</div>
-                                <Button onClick={verInfo} label="Ver Información" color='red'></Button>
+                                <Button onClick={verInfo} label="Ver Información" color='redness'></Button>
                             </div>
                         </div>
                     </div>

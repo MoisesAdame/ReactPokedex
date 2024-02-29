@@ -5,11 +5,7 @@
 }
 
 .red {
-    @apply bg-red-200;
-}
-
-.red__small__btn{
-    @apply bg-red-500 text-gray-500;
+    @apply bg-red-500;
 }
 
 .blue {
@@ -17,7 +13,7 @@
 }
 
 .red:hover {
-    @apply bg-red-500;
+    @apply bg-red-600;
 }
 
 .blue:hover {
@@ -25,9 +21,9 @@
 }
 
 .red:active {
-    @apply bg-green-500;
+    @apply bg-red-700;
 }
 
 .blue:active {
-    @apply bg-yellow-500;
+    @apply bg-red-700;
 }
