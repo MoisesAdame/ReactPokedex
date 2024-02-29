@@ -1,4 +1,5 @@
 import './input-pokemon.css';
+import './body.css';
 import { useState, FormEvent } from 'react';
 import PokemonButton from './PokemonButton';
 
@@ -21,7 +22,7 @@ export default function InputPokemon(){
                     className='input-pokemon__form-container__text-input'
                 />
                 
-                <PokemonButton color='red'></PokemonButton>
+                <PokemonButton color='red2'></PokemonButton>
             </form>
         </div>
     )

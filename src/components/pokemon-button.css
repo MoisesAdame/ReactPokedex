@@ -5,7 +5,11 @@
 }
 
 .red {
-    @apply bg-red-600;
+    @apply bg-red-200;
+}
+
+.red__small__btn{
+    @apply bg-red-500 text-gray-500;
 }
 
 .blue {

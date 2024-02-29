@@ -1,3 +1,35 @@
 .main-body {
     @apply mt-5 px-10;
 }
+
+.card__circle {
+    @apply absolute rounded-full border-4 border-gray-300 shadow-lg bg-white z-10;
+}
+
+.card__box {
+    @apply relative max-w-max rounded-3xl bg-white overflow-hidden shadow-lg mt-12 z-0 px-16;
+}
+
+.card__img {
+    @apply w-full h-full object-cover;
+}
+
+.card__frame {
+    @apply px-6 py-4 mb-5;
+}
+
+.card__txt {
+    @apply font-bold text-xl mt-16 flex justify-center text-gray-500;
+}
+
+.card__name {
+    @apply font-bold text-xl mb-5 mt-2 flex justify-center text-gray-500;
+}
+
+.card__centered__box {
+    @apply relative flex justify-center;
+}
+
+.card__outter__frame {
+    @apply flex justify-start mt-5;
+}
