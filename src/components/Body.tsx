@@ -1,5 +1,6 @@
 import './body.css';
 import React, { useEffect } from 'react';
+import InputPokemon from './InputPokemon';
 
 // para procesar los datos de la api
 interface PokemonListItem {
@@ -37,6 +38,10 @@ export default function Body(){
 
     return (
         <div className='main-body'>
+            
+            <InputPokemon></InputPokemon>
+
+
             <h1>Pokemons</h1>
             <div className="pokemon-list">
                 {pokemons.map(pokemon => (

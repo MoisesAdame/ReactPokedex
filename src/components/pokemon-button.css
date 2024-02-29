@@ -1,5 +1,5 @@
 .pokemon-button {
-    height: 100px;
+    height: inherit;
     aspect-ratio: 1;
     @apply rounded-full;
 }
