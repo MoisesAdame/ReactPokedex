@@ -4,16 +4,14 @@
 .blue:hover{
     @apply bg-blue-700;
 }
-.red{
+.light__red{
     @apply bg-red-200 text-gray-500;
 }
-
-.red__small__btn{
-    @apply bg-red-500 text-gray-500;
-}
-
-.red:hover{
+.light__red:hover{
     @apply bg-red-400 
+}
+.light__red:active {
+    @apply bg-red-500;
 }
 .green{
     @apply bg-green-500 text-white;
