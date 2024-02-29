@@ -1,7 +1,7 @@
 .pokemon-button {
     height: inherit;
     aspect-ratio: 1;
-    @apply rounded-full;
+    @apply rounded-full rounded-lg;
 }
 
 .red {

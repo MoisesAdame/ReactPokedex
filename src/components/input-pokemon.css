@@ -1,13 +1,14 @@
 .input-pokemon__form-container {
-    height: 6vh;
-    @apply bg-white rounded-xl px-5 mb-5 shadow-xl;
+    height: 7vh;
+    @apply flex items-center bg-white rounded-xl px-3 mb-5 shadow-xl;
 }
 
 .input-pokemon__form-container form {
-    height: inherit;
+    height: 85%;
+    width: 100%;
     @apply flex items-center justify-between bg-transparent px-1;
 }
 
 .input-pokemon__form-container__text-input {
-    @apply bg-transparent w-4/6;
+    @apply bg-transparent w-4/6 outline-none;
 }

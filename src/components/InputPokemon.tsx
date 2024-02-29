@@ -22,7 +22,7 @@ export default function InputPokemon(){
                     className='input-pokemon__form-container__text-input'
                 />
                 
-                <PokemonButton color='red2'></PokemonButton>
+                <PokemonButton color='red'></PokemonButton>
             </form>
         </div>
     )

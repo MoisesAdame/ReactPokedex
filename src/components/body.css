@@ -7,7 +7,7 @@
 }
 
 .card__box {
-    @apply relative max-w-max rounded-3xl bg-white overflow-hidden shadow-lg mt-20 z-0 px-20 p-4;
+    @apply relative max-w-max rounded-3xl bg-white overflow-hidden shadow-lg mt-20 z-0;
 }
 
 .card__img {
