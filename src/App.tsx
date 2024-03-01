@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar home="#" links={{'Wikipedia': 'random/link', 'Random': 'random/link'}}></Navbar>
+      <Navbar home="#" links={{'Wikipedia': 'https://en.wikipedia.org/wiki/Pok%C3%A9mon', 'Api': 'https://pokeapi.co/', 'Random': 'random'}}></Navbar>
 
       <Body></Body>
 
