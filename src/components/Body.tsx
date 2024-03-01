@@ -2,6 +2,7 @@ import './body.css';
 import Button from './Button';
 import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
 import InputPokemon from './InputPokemon';
+import InfoCard from './InfoCard';
 
 // para procesar los datos de la api
 interface PokemonListItem {
@@ -70,6 +71,7 @@ export default function Body() {
     return (
         <div className='main-body p-4'>
             <InputPokemon/>;
+            <InfoCard id="1" imageUrl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" name="Pikachu"></InfoCard>
             <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
 
                 {pokemons.map(pokemon => (
