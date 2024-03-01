@@ -42,7 +42,7 @@ export default function Body() {
                 return {
                     id: pokemon.id,
                     name: pokemon.name,
-                    image: pokemon.sprites.front_default
+                    image: pokemon.sprites.other['official-artwork'].front_default
                 };
             })
         );

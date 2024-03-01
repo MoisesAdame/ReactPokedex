@@ -32,7 +32,7 @@ export default function PokemonDetails() {
             setPokemon({
                 id: data.id,
                 name: data.name,
-                image: data.sprites.front_default,
+                image: data.sprites.other['official-artwork'].front_default,
                 experience: data.base_experience,
                 height: data.height,
                 weight: data.weight,
