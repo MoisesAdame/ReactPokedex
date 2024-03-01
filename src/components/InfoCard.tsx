@@ -30,7 +30,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, imageUrl, name }) => {
                     <div className="info__txt">60</div>
                 </div>
                 <div className="info__subtitles px-28">Habilidades</div>
-                <div className="grid grid-flow-col auto-cols-max gap-4 px-28 mt-6">
+                <div className="grid grid-flow-col auto-cols-max px-28 gap-4 mt-6">
                     <Tag color="abilities" text="Static"></Tag>
                     <Tag color="abilities" text="Lightning Rod"></Tag>
                 </div>
@@ -42,7 +42,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ id, imageUrl, name }) => {
                         <div className="info__stats__titles">SPA</div>
                         <div className="info__stats__titles">SPD</div>
                     </div>
-                <div className="grid grid-flow-col auto-cols-max gap-4 px-28 mt-6">
+                <div className="grid grid-flow-col auto-cols-max gap-4 px-28">
                     <Tag color="hp" text="35"></Tag>
                     <Tag color="atk" text="55"></Tag>
                     <Tag color="def" text="40"></Tag>
