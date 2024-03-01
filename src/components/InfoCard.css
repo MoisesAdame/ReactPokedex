@@ -7,7 +7,7 @@
 }
 
 .info__img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full p-8;
 }
 
 .info__frame {
