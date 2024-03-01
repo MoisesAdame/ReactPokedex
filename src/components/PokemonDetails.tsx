@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import InfoCard from './InfoCard';
+import InputPokemon from './InputPokemon';
 
 interface Pokemon {
     id: number;
@@ -53,6 +54,7 @@ export default function PokemonDetails() {
         <div>
             {pokemon ? (
                 <div>
+                    <InputPokemon/>
                     <InfoCard
                         id={pokemon.id.toString()}
                         imageUrl={pokemon.image}

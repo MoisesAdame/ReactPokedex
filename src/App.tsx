@@ -9,11 +9,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar 
-          home="#" 
+          home="/" 
           links={{
             'Wikipedia': 'https://en.wikipedia.org/wiki/Pok%C3%A9mon', 
             'Api': 'https://pokeapi.co/', 
-            'Random': '/pokemon/3'
+            'Random': `/pokemon/${2}`
           }}
         />
         <Routes>
