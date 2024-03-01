@@ -51,20 +51,20 @@ const InfoCard: React.FC<InfoCardProps> = ({
                       <div className="info__txt">{weight}</div>
                   </div>
                   <div className="info__subtitles px-28">Habilidades</div>
-                  <div className="grid grid-flow-col auto-cols-max px-28 gap-4 mt-6">
+                  <div className="grid grid-flow-col max-w-screen-sm px-28 gap-6 mt-6">
                       {abilities.map((ability, index) => (
                           <Tag key={index} color="abilities" text={ability}></Tag>
                       ))}
                   </div>
                   <div className="info__subtitles px-28">Stats</div>
-                  <div className="grid grid-flow-col auto-cols-max gap-36 px-48 mt-6">
+                  <div className="grid grid-flow-col max-w-screen-md flex justify-stretch gap-x-24  px-40 mt-6">
                       <div className="info__stats__titles">HP</div>
                       <div className="info__stats__titles">ATK</div>
                       <div className="info__stats__titles">DEF</div>
                       <div className="info__stats__titles">SPA</div>
                       <div className="info__stats__titles">SPD</div>
                   </div>
-                  <div className="grid grid-flow-col auto-cols-max gap-4 px-28">
+                  <div className="grid grid-flow-col max-w-screen-sm gap-6 px-28">
                       <Tag color="hp" text={stats.hp.toString()}></Tag>
                       <Tag color="atk" text={stats.attack.toString()}></Tag>
                       <Tag color="def" text={stats.defense.toString()}></Tag>
