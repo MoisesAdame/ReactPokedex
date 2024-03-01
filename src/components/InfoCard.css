@@ -23,7 +23,7 @@
 }
 
 .info__stats__titles {
-    @apply font-bold text-3xl text-gray-400;
+    @apply flex justify-center font-bold text-3xl text-gray-400;
 }
 
 .info__stats {
