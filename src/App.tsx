@@ -1,24 +1,27 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Body from './components/Body'
+import Body from './components/Body';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PokemonDetails from './components/PokemonDetails'; // Asegúrate de crear este componente
 
 function App() {
-
   return (
-    <div className="App">
-      <Navbar 
-        home="#" 
-        links={
-          {
+    <BrowserRouter>
+      <div className="App">
+        <Navbar 
+          home="#" 
+          links={{
             'Wikipedia': 'https://en.wikipedia.org/wiki/Pok%C3%A9mon', 
             'Api': 'https://pokeapi.co/', 
             'Random': 'random'
           }}
-      >
-      </Navbar>
-
-      <Body></Body>
-    </div>
+        />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/pokemon/:id" element={<PokemonDetails />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

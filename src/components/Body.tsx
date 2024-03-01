@@ -2,7 +2,7 @@ import './body.css';
 import Button from './Button';
 import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
 import InputPokemon from './InputPokemon';
-import InfoCard from './InfoCard';
+import { useNavigate } from 'react-router-dom';
 
 // para procesar los datos de la api
 interface PokemonListItem {
@@ -17,13 +17,14 @@ interface Pokemon {
     image: string;
 }
 
-// TODO: Desarrollar función para desplegar info. de un 
-// solo pokemon.
-function verInfo(){
-    console.log("hello");
-}
 
 export default function Body() {
+    const navigate = useNavigate();
+
+    function verInfo(id: number) {
+        navigate(`/pokemon/${id}`);
+    }
+
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
     const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
     const loadMoreRef = useRef(null);
@@ -71,7 +72,6 @@ export default function Body() {
     return (
         <div className='main-body p-4'>
             <InputPokemon/>;
-            <InfoCard id="1" imageUrl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" name="Pikachu"></InfoCard>
             <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
 
                 {pokemons.map(pokemon => (
@@ -83,7 +83,7 @@ export default function Body() {
                             <div className="card__frame">
                                 <div className="card__txt">{pokemon.id}</div>
                                 <div className="card__name">{pokemon.name}</div>
-                                <Button onClick={verInfo} label="Ver Información" color='redness'></Button>
+                                <Button onClick={() => verInfo(pokemon.id)} label="Ver Información" color='redness'></Button>
                             </div>
                         </div>
                     </div>
