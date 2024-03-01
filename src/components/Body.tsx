@@ -2,6 +2,7 @@ import './body.css';
 import Button from './Button';
 import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
 import InputPokemon from './InputPokemon';
+import PokemonDetails from './PokemonDetails';
 import { useNavigate } from 'react-router-dom';
 
 // para procesar los datos de la api
@@ -28,6 +29,7 @@ export default function Body() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
     const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
     const loadMoreRef = useRef(null);
+    const [mode, setMode] = useState('all');
 
     const getPokemons = async (url: string) => {
         const response = await fetch(url);
@@ -71,9 +73,8 @@ export default function Body() {
 
     return (
         <div className='main-body p-4'>
-            <InputPokemon/>;
+            <InputPokemon />;
             <div className="pokemon-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
-
                 {pokemons.map(pokemon => (
                     <div className="card__centered__box">
                         <div className="card__circle">

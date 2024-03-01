@@ -2,13 +2,15 @@ import './input-pokemon.css';
 import './body.css';
 import { useState, FormEvent } from 'react';
 import PokemonButton from './PokemonButton';
+import { useNavigate } from 'react-router-dom';
 
 export default function InputPokemon(){
+    const navigate = useNavigate();
+
     const [pokemonName, setPokemonName] = useState("");
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => { 
-        event.preventDefault();
-        alert(`The name you entered was: ${pokemonName}`)
+        navigate(`/pokemon/${pokemonName}`);
     }
 
     return (

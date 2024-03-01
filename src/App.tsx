@@ -13,7 +13,7 @@ function App() {
           links={{
             'Wikipedia': 'https://en.wikipedia.org/wiki/Pok%C3%A9mon', 
             'Api': 'https://pokeapi.co/', 
-            'Random': 'random'
+            'Random': '/pokemon/3'
           }}
         />
         <Routes>
