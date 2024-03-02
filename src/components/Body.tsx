@@ -4,19 +4,8 @@ import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y 
 import InputPokemon from './InputPokemon';
 import PokemonDetails from './PokemonDetails';
 import { useNavigate } from 'react-router-dom';
-
-// para procesar los datos de la api
-interface PokemonListItem {
-    name: string;
-    url: string;
-}
-
-// objetos pokemon
-interface Pokemon {
-    id: number;
-    name: string;
-    image: string;
-}
+import { PartialPokemon } from '../models/PartialPokemon';
+import { PokemonListItem } from '../models/PokemonListItem';
 
 export default function Body() {
     const navigate = useNavigate();
@@ -25,16 +14,15 @@ export default function Body() {
         navigate(`/pokemon/${id}`);
     }
 
-    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const [pokemons, setPokemons] = useState<PartialPokemon[]>([]);
     const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
     const loadMoreRef = useRef(null);
-    const [mode, setMode] = useState('all');
 
     const getPokemons = async (url: string) => {
         const response = await fetch(url);
         const data = await response.json();
         setNextPageUrl(data.next); // Actualizar la URL de la próxima página
-        const pokemonDetails: Pokemon[] = await Promise.all(
+        const pokemonDetails: PartialPokemon[] = await Promise.all(
             data.results.map(async (item: PokemonListItem) => {
                 const pokemonResponse = await fetch(item.url);
                 const pokemon = await pokemonResponse.json();
