@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar
-          home="/"
+          home="/ReactPokedex/"
           links={{
             Wikipedia: 'https://en.wikipedia.org/wiki/Pok%C3%A9mon',
             Api: 'https://pokeapi.co/',
