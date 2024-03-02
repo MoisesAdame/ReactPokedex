@@ -8,12 +8,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar 
-          home="/" 
+        <Navbar
+          home="/"
           links={{
-            'Wikipedia': 'https://en.wikipedia.org/wiki/Pok%C3%A9mon', 
-            'Api': 'https://pokeapi.co/', 
-            'Random': `/pokemon/${2}`
+            Wikipedia: 'https://en.wikipedia.org/wiki/Pok%C3%A9mon',
+            Api: 'https://pokeapi.co/',
+            Random: `/pokemon/${2}`
           }}
         />
         <Routes>

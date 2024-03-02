@@ -1,26 +1,25 @@
-
 .nav {
-    height: 12vh;
-    @apply flex items-center justify-between px-10 bg-red-600 text-white shadow-xl;
+  height: 12vh;
+  @apply flex items-center justify-between px-10 bg-red-600 text-white shadow-xl;
 }
 
-.nav__home-link{
-    height: inherit;
-    @apply flex items-center w-1/6;
+.nav__home-link {
+  height: inherit;
+  @apply flex items-center w-1/6;
 }
 
-.nav__home-link__img{
-    width: 80%;
+.nav__home-link__img {
+  width: 80%;
 }
 
 .nav__container {
-    @apply w-4/6;
+  @apply w-4/6;
 }
 
 .nav__container__links {
-    @apply flex justify-end space-x-6;
+  @apply flex justify-end space-x-6;
 }
 
 .nav__container__links__element {
-    @apply inline-flex;
+  @apply inline-flex;
 }
