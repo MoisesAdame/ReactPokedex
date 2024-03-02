@@ -39,14 +39,12 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
     return (
       <div className="info__outter__frame">
-          <div className="info__centered__box">
-              <div className="info__circle">
-                  <img className="info__img" src={imageUrl} alt={name} />
-              </div>
+        <div className='grid grid-cols-3 gap-4'>
+            <div className="info__centered__box col-span-2">
               <div className='info__box'>
                   <div className="info__frame">
                     <div className='grid grid-cols-2 w-1/12'>
-                        <div className='mt-24'>
+                        <div className='mt-16'>
                             <button onClick={returnToHome}> <img src={arrow} alt="back" /></button>
                         </div>
                         <div className="info__name">{name}</div>
@@ -84,7 +82,11 @@ const InfoCard: React.FC<InfoCardProps> = ({
                       <Tag color="spd" text={stats.specialDefense.toString()}></Tag>
                   </div>
               </div>
-          </div>
+            </div>
+            <div className="info__circle">
+                <img className="info__img" src={imageUrl} alt={name} />
+            </div>
+      </div>
       </div>
     );
   };
