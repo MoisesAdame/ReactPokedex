@@ -35,9 +35,18 @@
 }
 
 .info__centered__box {
+  height: 100%;
+  grid-column-start: 1; /* Start from the first column */
+  grid-column-end: 3;   /* End at the end of the first column */
   @apply mb-0;
 }
 
 .info__outter__frame {
-  @apply mt-5;
+  height: 80%;
+}
+
+.info__frame__grid {
+  height: 100%;
+  width: inherit;
+  @apply grid grid-cols-3;
 }

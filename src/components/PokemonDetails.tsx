@@ -4,6 +4,7 @@ import InfoCard from './InfoCard';
 import InputPokemon from './InputPokemon';
 import { Pokemon } from '../interfaces/Pokemon';
 import { PokeApi } from '../api/PokeApi';
+import './pokemon-details.css';
 
 export default function PokemonDetails() {
   let { id } = useParams();
@@ -52,9 +53,9 @@ export default function PokemonDetails() {
   }, [id]);
 
   return (
-    <div>
+    <div className='pokemon-info-wrapper'>
       {pokemon ? (
-        <div className="main-body p-4">
+        <div className="pokemon-info-wrapper__components">
           <InputPokemon />
           <InfoCard
             id={pokemon.id.toString()}

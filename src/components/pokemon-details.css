@@ -1,0 +1,8 @@
+.pokemon-info-wrapper {
+    height: 85vh;
+    @apply p-6;
+}
+
+.pokemon-info-wrapper__components {
+    height: inherit;
+}

@@ -24,8 +24,8 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <div className="info__outter__frame">
-      <div className="grid grid-cols-3 gap-4">
-        <div className="info__centered__box col-span-2">
+      <div className="info__frame__grid">
+        <div className="info__centered__box">
           <div className="info__box">
             <div className="info__frame">
               <div className="grid grid-cols-2 w-1/12">
