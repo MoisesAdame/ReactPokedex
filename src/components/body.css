@@ -1,35 +1,35 @@
 .main-body {
-    @apply mt-5 px-10;
+  @apply mt-5 px-10;
 }
 
 .card__circle {
-    @apply absolute w-36 h-36 rounded-full border-4 border-gray-300 shadow-lg bg-white z-10 mt-4;
+  @apply absolute w-36 h-36 rounded-full border-4 border-gray-300 shadow-lg bg-white z-10 mt-4;
 }
 
 .card__box {
-    @apply relative max-w-max rounded-3xl bg-white overflow-hidden shadow-lg mt-20 z-0;
+  @apply relative max-w-max rounded-3xl bg-white overflow-hidden shadow-lg mt-20 z-0;
 }
 
 .card__img {
-    @apply w-full h-full p-6;
+  @apply w-full h-full p-6;
 }
 
 .card__frame {
-    @apply px-6 py-4 mb-5;
+  @apply px-6 py-4 mb-5;
 }
 
 .card__txt {
-    @apply font-bold text-xl mt-20 flex justify-center text-gray-300;
+  @apply font-bold text-xl mt-20 flex justify-center text-gray-300;
 }
 
 .card__name {
-    @apply font-bold text-3xl mb-5 mt-2 flex justify-center text-gray-500;
+  @apply font-bold text-3xl mb-5 mt-2 flex justify-center text-gray-500;
 }
 
 .card__centered__box {
-    @apply relative flex justify-center;
+  @apply relative flex justify-center;
 }
 
 .card__outter__frame {
-    @apply flex justify-start mt-5;
+  @apply flex justify-start mt-5;
 }
