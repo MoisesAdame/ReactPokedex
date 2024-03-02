@@ -2,55 +2,47 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import InfoCard from './InfoCard';
 import InputPokemon from './InputPokemon';
-
-interface Pokemon {
-    id: number;
-    name: string;
-    image: string; 
-    experience: number; 
-    height: number; 
-    weight: number; 
-    abilities: string[]; 
-    stats: {
-        hp: number;
-        attack: number;
-        defense: number;
-        specialAttack: number;
-        specialDefense: number;
-    };
-}
+import { Pokemon } from '../models/Pokemon';
+import { PokeApi } from '../api/PokeApi';
 
 
 export default function PokemonDetails() {
     let { id } = useParams();
     const [pokemon, setPokemon] = useState<Pokemon | null>(null); // Estado inicial como nulo, pero tipado como Pokemon o null
-  
+
     useEffect(() => {
         async function fetchPokemon() {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-            const data = await response.json();
-            setPokemon({
-                id: data.id,
-                name: data.name,
-                image: data.sprites.other['official-artwork'].front_default,
-                experience: data.base_experience,
-                height: data.height,
-                weight: data.weight,
-                abilities: data.abilities.map((ability: { ability: { name: string }; }) => ability.ability.name),
-                stats: {
-                    hp: data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'hp').base_stat,
-                    attack: data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'attack').base_stat,
-                    defense: data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'defense').base_stat,
-                    specialAttack: data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'special-attack').base_stat,
-                    specialDefense: data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'special-defense').base_stat,
-                }
-            });
-        }
+            PokeApi.getPokemonById(id)
+                .then((response)=>{
 
+                    console.log(response);
+
+                    setPokemon({
+                        id: response.data.id,
+                        name: response.data.name,
+                        image: response.data.sprites.front_default,
+                        experience: response.data.base_experience,
+                        height: response.data.height,
+                        weight: response.data.weight,
+                        abilities: response.data.abilities.map((ability: { ability: { name: string }; }) => ability.ability.name),
+                        stats: {
+                            hp: response.data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'hp').base_stat,
+                            attack: response.data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'attack').base_stat,
+                            defense: response.data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'defense').base_stat,
+                            specialAttack: response.data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'special-attack').base_stat,
+                            specialDefense: response.data.stats.find((stat: { stat: { name: string; }; }) => stat.stat.name === 'special-defense').base_stat,
+                        }
+                    });
+
+            }).catch((error)=>{
+                console.log(error);
+            })
+        }
         fetchPokemon();
     }, [id]);
-    
+
     return (
+        
         <div>
             {pokemon ? (
                 <div>
