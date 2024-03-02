@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import InfoCard from './InfoCard';
 import InputPokemon from './InputPokemon';
-import { Pokemon } from '../models/Pokemon';
+import { Pokemon } from '../interfaces/Pokemon';
 import { PokeApi } from '../api/PokeApi';
 
 export default function PokemonDetails() {
