@@ -1,6 +1,8 @@
 import React from 'react';
 import './InfoCard.css';
 import Tag from './Tags';
+import arrow from '../images/arrow.png';
+import { useNavigate } from 'react-router-dom';
 
 interface InfoCardProps {
     id: string;
@@ -18,7 +20,6 @@ interface InfoCardProps {
       specialDefense: number;
     };
   }
-  
 
 const InfoCard: React.FC<InfoCardProps> = ({ 
     id, 
@@ -30,6 +31,12 @@ const InfoCard: React.FC<InfoCardProps> = ({
     abilities, 
     stats 
   }) => {
+    const navigate = useNavigate();
+
+    function returnToHome() {
+        navigate(`/`);
+    }
+
     return (
       <div className="info__outter__frame">
           <div className="info__centered__box">
@@ -38,7 +45,12 @@ const InfoCard: React.FC<InfoCardProps> = ({
               </div>
               <div className='info__box'>
                   <div className="info__frame">
-                      <div className="info__name">{name}</div>
+                    <div className='grid grid-cols-2 w-1/12'>
+                        <div className='mt-24'>
+                            <button onClick={returnToHome}> <img src={arrow} alt="back" /></button>
+                        </div>
+                        <div className="info__name">{name}</div>
+                    </div>
                   </div>
                   <div className="grid grid-cols-3 px-28">
                       <div className="info__subtitles">Experiencia</div>
