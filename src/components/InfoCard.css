@@ -7,7 +7,7 @@
 }
 
 .info__img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full p-8;
 }
 
 .info__frame {
@@ -23,7 +23,7 @@
 }
 
 .info__stats__titles {
-    @apply font-bold text-3xl text-gray-400;
+    @apply flex justify-center font-bold text-3xl text-gray-400;
 }
 
 .info__stats {
