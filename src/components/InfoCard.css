@@ -1,5 +1,5 @@
 .info__circle {
-    @apply absolute rounded-full border-8 border-gray-300 shadow-lg bg-white z-10 start-3/4 w-5/12 h-full;
+    @apply absolute rounded-full border-8 border-gray-300 shadow-lg bg-white z-10 start-3/4 w-3/12 h-full;
 }
 
 .info__box {

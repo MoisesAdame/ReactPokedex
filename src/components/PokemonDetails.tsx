@@ -20,7 +20,7 @@ export default function PokemonDetails() {
                     setPokemon({
                         id: response.data.id,
                         name: response.data.name,
-                        image: response.data.sprites.front_default,
+                        image: response.data.sprites.other['official-artwork'].front_default,
                         experience: response.data.base_experience,
                         height: response.data.height,
                         weight: response.data.weight,
@@ -45,7 +45,7 @@ export default function PokemonDetails() {
         
         <div>
             {pokemon ? (
-                <div>
+                <div className='main-body p-4'>
                     <InputPokemon/>
                     <InfoCard
                         id={pokemon.id.toString()}
