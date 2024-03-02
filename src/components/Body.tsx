@@ -18,7 +18,6 @@ interface Pokemon {
     image: string;
 }
 
-
 export default function Body() {
     const navigate = useNavigate();
 
