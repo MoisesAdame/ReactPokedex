@@ -2,14 +2,14 @@
 import './body.css';
 // Importar componentes y hooks necesarios de React
 import Button from './Button';
-import React, { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
+import { useEffect, useRef, useState } from 'react'; // Agregar useRef y useState
 import InputPokemon from './InputPokemon';
-import PokemonDetails from './PokemonDetails';
 // Importar hook para navegación en React Router
 import { useNavigate } from 'react-router-dom';
 // Importar tipos/interfaces para datos de Pokémon
-import { PartialPokemon } from '../models/PartialPokemon';
-import { PokemonListItem } from '../models/PokemonListItem';
+import { PartialPokemon } from '../interfaces/PartialPokemon';
+import { PokemonListItem } from '../interfaces/PokemonListItem';
+import { PokeApi } from '../api/PokeApi'; // Ensure this path is correct
 
 // Definir el componente Body
 export default function Body() {
@@ -23,15 +23,19 @@ export default function Body() {
 
   // Variables de estado para almacenar datos de Pokémon y la URL de la próxima página
   const [pokemons, setPokemons] = useState<PartialPokemon[]>([]);
-  const [nextPageUrl, setNextPageUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
+  const [nextPageOffset, setNextPageOffset] = useState(0);
   // Ref para cargar más Pokémon cuando se llega al final de la página
   const loadMoreRef = useRef(null);
 
   // Función para obtener datos de Pokémon de la API
-  const getPokemons = async (url: string) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setNextPageUrl(data.next); // Actualizar la URL de la próxima página
+  const getPokemons = async () => {
+    const response = await PokeApi.getPaginationPokemons(20, nextPageOffset);
+    const data = await response.data;
+
+    // Calcular el offset para la próxima página
+    const nextOffset = nextPageOffset + 20;
+    setNextPageOffset(nextOffset);
+
     const pokemonDetails: PartialPokemon[] = await Promise.all(
       data.results.map(async (item: PokemonListItem) => {
         const pokemonResponse = await fetch(item.url);
@@ -48,15 +52,15 @@ export default function Body() {
 
   // Efecto para obtener datos de Pokémon inicialmente y en páginas subsecuentes
   useEffect(() => {
-    getPokemons(nextPageUrl);
+    getPokemons();
   }, []);
 
   // Efecto para usar Intersection Observer y cargar más Pokémon al llegar al final de la página
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && nextPageUrl) {
-          getPokemons(nextPageUrl);
+        if (entries[0].isIntersecting) {
+          getPokemons();
         }
       },
       { threshold: 0.1 }
@@ -67,7 +71,7 @@ export default function Body() {
 
     // Limpiar el observer cuando se desmonta el componente
     return () => observer.disconnect();
-  }, [nextPageUrl]); // Se activará nuevamente cuando 'nextPageUrl' cambie
+  }, [nextPageOffset]); // Se activará nuevamente cuando 'nextPageUrl' cambie
 
   // Renderizar el componente
   return (
@@ -82,16 +86,15 @@ export default function Body() {
             <div className="card__circle">
               <img className="card__img" src={pokemon.image} alt="Card" />
             </div>
-            <div key={pokemon.id} className="card__box">
+            <div className="card__box">
               <div className="card__frame">
                 <div className="card__txt">{pokemon.id}</div>
                 <div className="card__name">{pokemon.name}</div>
                 {/* Componente de botón para ver detalles del Pokémon */}
-                <Button
+                <Button 
                   onClick={() => verInfo(pokemon.id)}
-                  label="Ver Información"
-                  color="redness"
-                ></Button>
+                  label="Ver Información" 
+                  color="redness"></Button>
               </div>
             </div>
           </div>
