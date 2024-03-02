@@ -14,12 +14,12 @@ function App() {
           links={{
             Wikipedia: 'https://en.wikipedia.org/wiki/Pok%C3%A9mon',
             Api: 'https://pokeapi.co/',
-            Random: `/pokemon/${random.int(1, 1025)}`
+            Random: `/ReactPokedex/pokemon/${random.int(1, 1025)}`
           }}
         />
         <Routes>
-          <Route path="/" element={<Body />} />
-          <Route path="/pokemon/:id" element={<PokemonDetails />} />
+          <Route path="/ReactPokedex/" element={<Body />} />
+          <Route path="/ReactPokedex/pokemon/:id" element={<PokemonDetails />} />
         </Routes>
       </div>
     </BrowserRouter>

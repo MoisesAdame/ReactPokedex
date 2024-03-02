@@ -19,7 +19,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   // Función para navegar de regreso a la página principal
   function returnToHome() {
-    navigate(`/`);
+    navigate(`/ReactPokedex/`);
   }
 
   return (
