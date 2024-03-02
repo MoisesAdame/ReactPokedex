@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# React Pokédex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the React Pokédex project! This Pokédex is a web application built using React.js that allows users to browse through various Pokémon and view their details.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the live demo here: https://moisesadame.github.io/ReactPokedex/.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Browse through a list of Pokémon.
+- View detailed information about each Pokémon, including their types, abilities, and stats.
+- Search for specific Pokémon by name.
+- Filter Pokémon by type.
+- Responsive design, making it accessible on various devices.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React.js
+- HTML5
+- CSS3
+- PokeAPI (for fetching Pokémon data)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To run this project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository to your local machine using: git clone https://github.com/moisesadame/ReactPokedex.git
+2. Navigate to the project directory.
+3. Install dependencies by running: npm install.
+4. Start the development server with: npm start.
+5. Open your browser and visit http://localhost:3000 to view the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-### `npm run eject`
+## Credits
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- This project is created by Moises Adame: https://github.com/moisesadame.
+- Pokémon data is fetched from the PokeAPI: https://pokeapi.co/.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License. See the LICENSE file for details.
