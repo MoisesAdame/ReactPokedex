@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Body from './components/Body';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PokemonDetails from './components/PokemonDetails'; // Asegúrate de crear este componente
+import random from 'random';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           links={{
             Wikipedia: 'https://en.wikipedia.org/wiki/Pok%C3%A9mon',
             Api: 'https://pokeapi.co/',
-            Random: `/pokemon/${2}`
+            Random: `/pokemon/${random.int(1, 1025)}`
           }}
         />
         <Routes>

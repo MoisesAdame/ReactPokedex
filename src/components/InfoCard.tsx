@@ -1,6 +1,6 @@
 import React from 'react';
 import './InfoCard.css';
-import Tag from './Tags';
+import Tag from './Tags'; // Importa el componente Tag
 import arrow from '../images/arrow.png';
 import { useNavigate } from 'react-router-dom';
 import { InfoCardProps } from '../interfaces/InfoCardProps';
@@ -17,6 +17,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
 }) => {
   const navigate = useNavigate();
 
+  // Función para navegar de regreso a la página principal
   function returnToHome() {
     navigate(`/`);
   }
@@ -29,6 +30,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
             <div className="info__frame">
               <div className="grid grid-cols-2 w-1/12">
                 <div className="mt-16">
+                  {/* Botón para volver a la página principal */}
                   <button onClick={returnToHome}>
                     {' '}
                     <img src={arrow} alt="back" />
@@ -49,6 +51,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
             </div>
             <div className="info__subtitles px-28">Habilidades</div>
             <div className="grid grid-flow-col max-w-screen-sm px-28 gap-6 mt-6">
+              {/* Renderiza las etiquetas de habilidades */}
               {abilities.map((ability, index) => (
                 <Tag key={index} color="abilities" text={ability}></Tag>
               ))}
@@ -62,6 +65,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
               <div className="info__stats__titles">SPD</div>
             </div>
             <div className="grid grid-flow-col max-w-screen-sm gap-6 px-28">
+              {/* Renderiza las etiquetas de estadísticas */}
               <Tag color="hp" text={stats.hp.toString()}></Tag>
               <Tag color="atk" text={stats.attack.toString()}></Tag>
               <Tag color="def" text={stats.defense.toString()}></Tag>
